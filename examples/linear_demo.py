@@ -28,7 +28,7 @@ print("\n=== Boston Housing (1 признак: среднее число ком�
 try:
     from sklearn.datasets import load_diabetes
     diabetes = load_diabetes()
-    X_b = diabetes.data[:, [2]]  # выберем один признак
+    X_b = diabetes.data[:, [2]] 
     y_b = diabetes.target
 
     model_b = LinearRegression(learning_rate=0.1, n_iterations=2000, normalize='zscore')

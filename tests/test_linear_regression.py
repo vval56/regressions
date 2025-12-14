@@ -5,14 +5,14 @@ from regressions import LinearRegression
 def test_linear_exact_fit_no_noise():
     """Тест: точное восстановление линейной зависимости без шума."""
     X = np.array([[0.0], [1.0], [2.0], [3.0]])
-    y = 2.0 * X.flatten() + 1.0  # y = 2x + 1
+    y = 2.0 * X.flatten() + 1.0 
 
     model = LinearRegression(learning_rate=0.1, n_iterations=5000, normalize=None)
     model.fit(X, y)
 
     assert model.score(X, y) > 0.9999
-    assert abs(model.w[0] - 1.0) < 1e-2  # bias
-    assert abs(model.w[1] - 2.0) < 1e-2  # вес признака
+    assert abs(model.w[0] - 1.0) < 1e-2 
+    assert abs(model.w[1] - 2.0) < 1e-2  
 
 
 def test_linear_with_noise():
@@ -30,7 +30,7 @@ def test_linear_with_noise():
 def test_linear_multi_features():
     """Тест: несколько признаков."""
     X = np.array([[1, 2], [2, 3], [3, 4], [4, 5]], dtype=float)
-    y = X[:, 0] * 1.0 + X[:, 1] * (-2.0) + 0.5  # y = x1 - 2*x2 + 0.5
+    y = X[:, 0] * 1.0 + X[:, 1] * (-2.0) + 0.5  
 
     model = LinearRegression(learning_rate=0.1, n_iterations=5000, normalize='zscore')
     model.fit(X, y)

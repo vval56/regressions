@@ -110,7 +110,7 @@ class LogisticRegression:
         X_with_bias = np.hstack([np.ones((n_samples, 1)), X_norm])
         z = X_with_bias @ self.w
         y_proba = sigmoid(z)
-        return (y_proba >= 0.5).astype(int)  # порог 0.5 → классы 0/1
+        return (y_proba >= 0.5).astype(int)  
     
     def predict_proba(self, X):
         if not self._is_fitted:
@@ -167,5 +167,5 @@ class LogisticRegression:
         model.std_ = data['std_'] if 'std_' in data else None
         model.min_ = data['min_'] if 'min_' in data else None
         model.max_ = data['max_'] if 'max_' in data else None
-        model._is_fitted = True  # ← ← ← ДОБАВЬ ЭТУ СТРОКУ
+        model._is_fitted = True  
         return model

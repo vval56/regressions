@@ -153,7 +153,6 @@ class LinearRegression:
             reg_strength=self.reg_strength
         )
 
-    # В LinearRegression.load():
     @classmethod
     def load(cls, path):
         data = np.load(path, allow_pickle=True)
@@ -167,5 +166,5 @@ class LinearRegression:
         model.std_ = data['std_'] if 'std_' in data else None
         model.min_ = data['min_'] if 'min_' in data else None
         model.max_ = data['max_'] if 'max_' in data else None
-        model._is_fitted = True  # ← ← ← ДОБАВЬ ЭТУ СТРОКУ
+        model._is_fitted = True
         return model
