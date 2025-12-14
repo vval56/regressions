@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "regressions"
+version = "0.1.0"
+description = "Linear and Logistic Regression from scratch"
+dependencies = [
+    "numpy",
+]
+requires-python = ">=3.7"
+
+[tool.setuptools.packages.find]
+where = ["src"]
